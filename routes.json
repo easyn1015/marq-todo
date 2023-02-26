@@ -1,0 +1,8 @@
+{
+    "/api/*": "/$1",
+    "GET /todos": "/todos",
+    "GET /todos/:id": "/todos/:id",
+    "POST /todos": "/todos",
+    "PUT /todos/:id": "/todos/:id",
+    "DELETE /todos/:id": "/todos/:id"
+  }
