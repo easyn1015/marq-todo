@@ -8,6 +8,7 @@ interface ReferenceItemProps {
     referenceTodoId?: number;
     isOpen: boolean;
     onGlobalOpen: (itemId: number | null) => void;
+    currentTodo?: Todo;
 }
 
 const ReferenceItem = (props: ReferenceItemProps) => {
@@ -41,24 +42,25 @@ const ReferenceItem = (props: ReferenceItemProps) => {
                 <button
                     className={`reference-item__add-button ${activeTodo ? 'active' : ''}`}
                     type='button'
+                    title='Add Reference'
                     onClick={handleToggle}>
                     {activeTodo && `${activeTodo.content}`}
                 </button>
                 {props.isOpen && (
                     <div className={`reference-item__modal ${props.isOpen ? 'open' : ''}`}>
                         <div className='reference-item__modal__content'>
+                            <p className='reference-item__modal__title'>Reference</p>
                             <ul className='reference-item__list'>
-                                <li>
-                                    {' '}
-                                    {activeTodo && (
+                                {activeTodo && (
+                                    <li>
                                         <button
                                             type='button'
                                             onClick={handleRemoveReference}
                                             className='reference-item__remove-button'>
                                             Remove Reference
                                         </button>
-                                    )}
-                                </li>
+                                    </li>
+                                )}
                                 {props.todos.map((todo: Todo) => (
                                     <li
                                         key={todo.id}
@@ -66,7 +68,10 @@ const ReferenceItem = (props: ReferenceItemProps) => {
                                         <button
                                             type='button'
                                             onClick={() => handleAddReference(todo)}
-                                            disabled={props.activeReferenceIds.includes(todo.id)}
+                                            disabled={
+                                                props.activeReferenceIds.includes(todo.id) ||
+                                                (props.currentTodo ? props.currentTodo.id === todo.id : false)
+                                            }
                                             className={`reference-item__list-item-button ${
                                                 activeTodo?.id === todo.id ? 'selected' : ''
                                             }`}>

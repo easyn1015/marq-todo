@@ -9,6 +9,10 @@ export const usePagination = (pageSize: number, data: any[]) => {
 
     const totalPages = Math.ceil(data.length / pageSize); // 전체 페이지 수
 
+    const handleinitializePage = () => {
+        setCurrentPage(1);
+    };
+
     const handlePrevPage = () => {
         setCurrentPage((currentPage) => currentPage - 1);
     };
@@ -21,6 +25,7 @@ export const usePagination = (pageSize: number, data: any[]) => {
         currentPage,
         paginatedData,
         totalPages,
+        handleinitializePage,
         handlePrevPage,
         handleNextPage,
     };

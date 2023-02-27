@@ -97,43 +97,54 @@ const TodoListItem = (props: TodoListItemProps) => {
                                 onChange={handleInputChange}
                                 disabled={!isEditMode}
                             />
-                            <button
-                                className={`todo-list-item__edit-button ${
-                                    isEditMode ? 'todo-list-item__edit-button--edit-mode' : ''
-                                }`}
-                                onClick={() => setIsEditMode(!isEditMode)}>
-                                <span className='visually-hidden'>Edit</span>
-                            </button>
-                            <button
-                                className='todo-list-item__delete-button'
-                                onClick={() => setShowDeleteModal(true)}>
-                                <span className='visually-hidden'>Delete</span>
-                            </button>
+                            <div className='todo-list-item__button-box'>
+                                <button
+                                    className={`todo-list-item__edit-button ${
+                                        isEditMode ? 'todo-list-item__edit-button--edit-mode' : ''
+                                    }`}
+                                    onClick={() => setIsEditMode(!isEditMode)}>
+                                    <span className='visually-hidden'>Edit</span>
+                                </button>
+                                <button
+                                    className='todo-list-item__delete-button'
+                                    onClick={() => setShowDeleteModal(true)}>
+                                    <span className='visually-hidden'>Delete</span>
+                                </button>
+                            </div>
                         </div>
                         <div className='todo-list-item__info'>
                             {props.todo.referenced_todos.length > 0 && (
-                                <span className='todo-list-item__references'>
-                                    <span className='ir'>References</span> {referencedContents.join(', ')}
-                                </span>
+                                <p
+                                    className='todo-list-item__label--references'
+                                    aria-label='References'>
+                                    {referencedContents.map((content, index) => (
+                                        <span key={index}>{content}</span>
+                                    ))}
+                                </p>
                             )}
-                            <span className='todo-list-item__created-at'>
-                                <span className='ir'>Created</span> {formatISODate(props.todo.created_at)}
+                            <span
+                                className='todo-list-item__label--created'
+                                aria-label='Created'>
+                                {formatISODate(props.todo.created_at)}
                             </span>
-                            <span className='todo-list-item__updated-at'>
-                                <span className='ir'>Updated</span> {formatISODate(props.todo.updated_at)}
+                            <span
+                                className='todo-list-item__label--updated'
+                                aria-label='Updated'>
+                                {formatISODate(props.todo.updated_at)}
                             </span>
                         </div>
                     </div>
                 </div>
-                <div className='todo-list-item__entry-bar'>
-                    {isEditMode && (
+                {isEditMode && (
+                    <div className='todo-list-item__entry-bar'>
                         <ReferenceList
                             todos={props.todos}
-                            referenced_todos={props.todo.referenced_todos}
+                            referencedTodos={props.todo.referenced_todos}
                             onSaveTodo={handleEditTodo}
+                            currentTodo={props.todo}
                         />
-                    )}
-                </div>
+                    </div>
+                )}
                 {showDeleteModal && (
                     <div className='todo-list-item__delete-modal'>
                         <div className='todo-list-item__delete-modal-content'>

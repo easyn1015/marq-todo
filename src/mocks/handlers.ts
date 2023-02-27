@@ -1,6 +1,6 @@
 import { rest } from 'msw';
 
-const dbHost = 'http://localhost:3001'; // process.env.REACT_APP_DB_HOST;
+const dbHost = process.env.REACT_APP_DB_HOST;
 
 interface Todo {
     id: number;

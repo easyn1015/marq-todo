@@ -1,137 +1,104 @@
 {
   "todos": [
     {
-      "content": "지연짱2",
+      "content": "마크비전 자체개발 인공지능으로 위조상품을 실시간으로 탐지하고 제거하기",
+      "is_completed": false,
+      "referenced_todos": [],
+      "created_at": "2023-02-26T15:29:22.302Z",
+      "updated_at": "2023-02-26T17:01:55.556Z",
+      "id": 1
+    },
+    {
+      "content": "HTML, CSS, JavaScript 사용을 통한 웹 개발",
+      "is_completed": false,
+      "referenced_todos": [],
+      "created_at": "2023-02-26T15:31:07.766Z",
+      "updated_at": "2023-02-26T17:01:40.270Z",
+      "id": 3
+    },
+    {
+      "content": "Typescript 와 같은 정적 타입 언어 개발",
       "is_completed": false,
       "referenced_todos": [
-        21,
-        19
+        1
       ],
-      "created_at": "2023-02-26T05:55:20.701Z",
-      "updated_at": "2023-02-26T13:53:10.029Z",
-      "id": 18
+      "created_at": "2023-02-26T15:31:27.516Z",
+      "updated_at": "2023-02-26T17:01:56.836Z",
+      "id": 4
     },
     {
-      "content": "asdfasdf",
-      "is_completed": true,
+      "content": "React.js 와 같은 프레임웍을 활용한 SPA 개발",
+      "is_completed": false,
       "referenced_todos": [],
-      "created_at": "2023-02-26T06:01:55.800Z",
-      "updated_at": "2023-02-26T13:53:14.134Z",
-      "id": 19
+      "created_at": "2023-02-26T15:31:56.646Z",
+      "updated_at": "2023-02-26T17:01:42.226Z",
+      "id": 5
     },
     {
-      "content": "zsdfzsfz",
-      "is_completed": true,
+      "content": "직관적이고 실용적인 API 설계",
+      "is_completed": false,
       "referenced_todos": [],
-      "created_at": "2023-02-26T06:01:57.822Z",
-      "updated_at": "2023-02-26T13:52:52.875Z",
-      "id": 20
+      "created_at": "2023-02-26T15:32:11.387Z",
+      "updated_at": "2023-02-27T08:35:52.447Z",
+      "id": 6
     },
     {
-      "content": "진호짱",
+      "content": "셀러 인텔리전스 기술을 통한 위조상품 셀러 구분",
       "is_completed": false,
       "referenced_todos": [
-        18
+        1
       ],
-      "created_at": "2023-02-26T06:02:03.063Z",
-      "updated_at": "2023-02-26T06:02:04.376Z",
-      "id": 21
+      "created_at": "2023-02-26T16:58:42.381Z",
+      "updated_at": "2023-02-27T08:35:48.545Z",
+      "id": 7
     },
     {
-      "content": "sdgdsgsg",
+      "content": "새로운 영역에 도전 정신 갖기",
+      "is_completed": false,
       "referenced_todos": [],
-      "created_at": "2023-02-26T06:18:26.301Z",
-      "updated_at": "2023-02-26T06:18:26.301Z",
-      "is_completed": false,
-      "id": 22
+      "created_at": "2023-02-26T17:00:42.755Z",
+      "updated_at": "2023-02-26T17:03:30.817Z",
+      "id": 8
     },
     {
-      "content": "sdgsdgsdgxcv",
+      "content": "문제 해결 능력을 갖춘 성장하는 개발자 되기",
       "referenced_todos": [],
-      "created_at": "2023-02-26T06:18:29.449Z",
-      "updated_at": "2023-02-26T06:18:29.449Z",
+      "created_at": "2023-02-26T17:01:32.343Z",
+      "updated_at": "2023-02-26T17:01:32.343Z",
       "is_completed": false,
-      "id": 23
+      "id": 9
     },
     {
-      "content": "sfsfsdfsd",
+      "content": "마크비전, 유럽 시장 확장..프랑스 파리 오피스 설립 및 리더십 영입",
       "referenced_todos": [],
-      "created_at": "2023-02-26T06:18:32.962Z",
-      "updated_at": "2023-02-26T06:18:32.962Z",
+      "created_at": "2023-02-26T17:05:48.385Z",
+      "updated_at": "2023-02-26T17:05:48.385Z",
       "is_completed": false,
-      "id": 24
+      "id": 10
     },
     {
-      "content": "sdfsdfsdfdsfsdf",
+      "content": "IP 보호와 관리를 통한 기업들의 가치 제고",
       "referenced_todos": [],
-      "created_at": "2023-02-26T06:18:35.693Z",
-      "updated_at": "2023-02-26T06:18:35.693Z",
+      "created_at": "2023-02-26T17:06:05.869Z",
+      "updated_at": "2023-02-26T17:06:05.869Z",
       "is_completed": false,
-      "id": 25
+      "id": 11
     },
     {
-      "content": "safxx",
+      "content": "브랜드와 창작자들의 결과물 보호",
       "referenced_todos": [],
-      "created_at": "2023-02-26T06:18:38.555Z",
-      "updated_at": "2023-02-26T06:18:38.555Z",
+      "created_at": "2023-02-26T17:06:21.830Z",
+      "updated_at": "2023-02-26T17:06:21.830Z",
       "is_completed": false,
-      "id": 26
+      "id": 12
     },
     {
-      "content": "241515",
+      "content": "전 세계 모든 기업들이 사용 가능한 종합 IP 플랫폼",
       "referenced_todos": [],
-      "created_at": "2023-02-26T06:18:41.765Z",
-      "updated_at": "2023-02-26T06:18:41.765Z",
+      "created_at": "2023-02-26T17:07:32.270Z",
+      "updated_at": "2023-02-26T17:07:32.270Z",
       "is_completed": false,
-      "id": 27
-    },
-    {
-      "content": "315151351",
-      "referenced_todos": [],
-      "created_at": "2023-02-26T06:18:46.204Z",
-      "updated_at": "2023-02-26T06:18:46.204Z",
-      "is_completed": false,
-      "id": 28
-    },
-    {
-      "content": "dsfdfsf",
-      "referenced_todos": [
-        19
-      ],
-      "created_at": "2023-02-26T09:23:01.285Z",
-      "updated_at": "2023-02-26T09:23:01.285Z",
-      "is_completed": false,
-      "id": 29
-    },
-    {
-      "content": "teststett",
-      "referenced_todos": [
-        21
-      ],
-      "created_at": "2023-02-26T09:23:19.899Z",
-      "updated_at": "2023-02-26T09:23:19.899Z",
-      "is_completed": false,
-      "id": 30
-    },
-    {
-      "content": "팡팡팡",
-      "referenced_todos": [
-        21
-      ],
-      "created_at": "2023-02-26T09:23:41.636Z",
-      "updated_at": "2023-02-26T09:23:41.636Z",
-      "is_completed": false,
-      "id": 31
-    },
-    {
-      "content": "진호짱ㅉ아ㅉ아ㅉ아ㅉ아ㅉㅇ진호짱ㅉ아ㅉ아ㅉ아ㅉ아ㅉㅇ진호짱ㅉ아ㅉ아ㅉ아ㅉ아ㅉㅇ진호짱ㅉ아ㅉ아ㅉ아ㅉ아ㅉㅇ진호짱ㅉ아ㅉ아ㅉ아ㅉ아ㅉㅇ진호짱ㅉ아ㅉ아ㅉ아ㅉ아ㅉㅇ진호짱ㅉ아ㅉ아ㅉ아ㅉ아ㅉㅇ진호짱ㅉ아ㅉ아ㅉ아ㅉ아ㅉㅇ",
-      "referenced_todos": [
-        18
-      ],
-      "created_at": "2023-02-26T13:05:20.529Z",
-      "updated_at": "2023-02-26T13:05:20.529Z",
-      "is_completed": false,
-      "id": 32
+      "id": 13
     }
   ]
 }

@@ -67,9 +67,9 @@ function App() {
     };
 
     // 새로운 todo를 추가하는 함수
-    const addTodo = async (content: string, referenced_todos?: number[]) => {
+    const addTodo = async (content: string, referencedTodos?: number[]) => {
         try {
-            await api.createTodo(content, referenced_todos);
+            await api.createTodo(content, referencedTodos);
             updateTodos(); // 추가된 todo를 포함해서 todo 목록을 다시 가져옴
         } catch (error) {
             console.error(error);
@@ -79,17 +79,17 @@ function App() {
     return (
         <div className='app'>
             <header className='app__header'>
-                <h1 className='app__title'>Todo List</h1>
+                <h1 className='app__title'>Marq-TODOS</h1>
             </header>
             <main className='app__main'>
-                <div className='todo-form-section'>
+                <div className='todo-section--form'>
                     <TodoForm
                         onAddTodo={addTodo}
                         todos={todos}
                     />
                 </div>
 
-                <div className='todo-list-section'>
+                <div className='todo-section--list'>
                     <TodoList
                         onUpdateTodo={updateTodo}
                         onDeleteTodo={deleteTodo}

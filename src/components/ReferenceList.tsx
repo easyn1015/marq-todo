@@ -3,13 +3,14 @@ import ReferenceItem from './ReferenceItem';
 import { Todo } from '../api';
 
 interface ReferenceListProps {
-    onSaveTodo: (referenced_todos?: number[]) => void;
+    onSaveTodo: (referencedTodos?: number[]) => void;
     todos: Todo[];
-    referenced_todos?: number[];
+    referencedTodos?: number[];
+    currentTodo?: Todo;
 }
 
 const ReferenceList = (props: ReferenceListProps) => {
-    const [activeReferenceIds, setActiveReferenceIds] = useState<number[]>(props.referenced_todos || []);
+    const [activeReferenceIds, setActiveReferenceIds] = useState<number[]>(props.referencedTodos || []);
     const [openItemId, setOpenItemId] = useState<number | null>(null);
 
     const handleAddReference = (todoId: number) => {
@@ -25,7 +26,7 @@ const ReferenceList = (props: ReferenceListProps) => {
     const handleSaveTodoClick = () => {
         props.onSaveTodo(activeReferenceIds);
         // TodoForm인 경우에만 Save된 후 활성화 된 참조 비움
-        if (props.referenced_todos === undefined) setActiveReferenceIds([]);
+        if (props.referencedTodos === undefined) setActiveReferenceIds([]);
         setOpenItemId(null);
     };
 
@@ -45,6 +46,7 @@ const ReferenceList = (props: ReferenceListProps) => {
                             referenceTodoId={todoId}
                             isOpen={openItemId === todoId}
                             onGlobalOpen={handleGlobalOpenItemId}
+                            currentTodo={props.currentTodo}
                         />
                     </li>
                 ))}
@@ -55,6 +57,7 @@ const ReferenceList = (props: ReferenceListProps) => {
                         onAddReference={handleAddReference}
                         isOpen={openItemId === 0}
                         onGlobalOpen={handleGlobalOpenItemId}
+                        currentTodo={props.currentTodo}
                     />
                 </li>
             </ul>

@@ -4,7 +4,7 @@ import { Todo } from '../api';
 import { formatDate } from '../utils/formatDate';
 
 interface TodoFormProps {
-    onAddTodo: (content: string, referenced_todos?: number[]) => void;
+    onAddTodo: (content: string, referencedTodos?: number[]) => void;
     todos: Todo[];
 }
 const TodoForm = (props: TodoFormProps) => {
@@ -14,8 +14,8 @@ const TodoForm = (props: TodoFormProps) => {
         setInputValue(event.target.value);
     };
 
-    const handleAddTodo = (referenced_todos?: number[]) => {
-        props.onAddTodo(inputValue, referenced_todos);
+    const handleAddTodo = (referencedTodos?: number[]) => {
+        props.onAddTodo(inputValue, referencedTodos);
         setInputValue('');
     };
 

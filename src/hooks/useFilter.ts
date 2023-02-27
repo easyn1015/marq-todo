@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-type FilterType = 'All' | 'Active' | 'Completed';
+export type FilterType = 'All' | 'Active' | 'Completed';
 
 export const useFilter = (data: any[]) => {
     const [filter, setFilter] = useState<FilterType>('All'); // 필터 상태 초기화

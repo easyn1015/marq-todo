@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Reset CSS
    Reference: http://meyerweb.com/eric/tools/css/reset/ 
 */
@@ -139,7 +138,7 @@ img {
 html {
   height: 100%;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: #292827; }
 
 body {
@@ -171,7 +170,7 @@ body {
     justify-content: center;
     background: #2564cf; }
   .app__title {
-    padding: 20px 0;
+    padding: 1.25rem 0;
     margin: 0;
     font-size: 1rem;
     font-weight: bold;
@@ -180,7 +179,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 1.375rem 1.5rem; }
+    padding: 1.375rem 1.5rem;
+    box-sizing: border-box; }
 
 .todo-form__wrapper {
   display: flex;
@@ -213,7 +213,7 @@ body {
     display: block;
     position: absolute;
     top: 50%;
-    left: 22px;
+    left: 1.375rem;
     transform: translateY(-50%);
     width: 1rem;
     height: 1rem;
@@ -254,7 +254,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0.75rem auto 0;
-  padding: 1.25rem 0;
+  padding: 1.25rem 0 0;
   color: #767676; }
   .todo-list__header {
     display: flex;
@@ -279,28 +279,26 @@ body {
       .todo-list__filter-button:last-of-type {
         margin: 0; }
   .todo-list__count {
-    font-size: 16px; }
-  .todo-list__items {
-    width: 100%; }
-    .todo-list__items > * {
-      margin-bottom: 10px; }
+    font-size: 1rem; }
+  .todo-list__items > * {
+    margin-bottom: 10px; }
   .todo-list__pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px; }
+    align-items: center;
+    margin-top: 1.25rem; }
     .todo-list__pagination-button {
-      font-size: 16px;
-      padding: 8px 12px;
+      font-size: 1rem;
+      padding: 0.5rem 0.75rem;
       border: none;
       background-color: transparent;
-      color: #333;
+      color: #292827;
       cursor: pointer; }
       .todo-list__pagination-button:hover {
-        background-color: #333;
-        color: #fff; }
+        color: #2564cf; }
     .todo-list__pagination-info {
-      font-size: 16px;
-      margin: 0 20px; }
+      font-size: 1rem;
+      margin: 0 1.25rem; }
 
 .todo-list-item {
   position: relative;
@@ -313,6 +311,9 @@ body {
     display: flex;
     align-items: center;
     padding: 0 1.5rem; }
+    @media screen and (max-width: 768px) {
+      .todo-list-item__wrapper {
+        padding: 0 0.714rem; } }
   .todo-list-item__entry-bar {
     padding: 0 1.5rem;
     display: flex;
@@ -333,7 +334,7 @@ body {
         display: block;
         width: 1rem;
         height: 1rem;
-        background: #fff url("/src/assets/img/icon-check.png") no-repeat center center/0.625rem;
+        background: #2564cf url("/src/assets/img/icon-check-w.png") no-repeat center 4px/0.6rem;
         cursor: pointer; }
     .todo-list-item__checkbox label {
       display: block;
@@ -351,10 +352,12 @@ body {
         height: 100%;
         border-radius: 50%;
         border: 1px solid #2564cf;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        cursor: pointer; }
   .todo-list-item__input {
     padding: 0;
-    margin-right: 8px;
+    margin-right: 0.5rem;
+    width: 100%;
     background: none;
     border: none;
     font-size: 0.875rem;
@@ -369,28 +372,28 @@ body {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    padding: 8px 14px 8px 0; }
-    .todo-list-item__content__input-area {
-      display: flex;
-      align-items: center; }
-      .todo-list-item__content__input-area__edit-button, .todo-list-item__content__input-area__delete-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-        font-size: 1.2rem;
-        padding: 0;
-        margin: 0; }
-        .todo-list-item__content__input-area__edit-button:hover, .todo-list-item__content__input-area__delete-button:hover {
-          color: #333; }
-        .todo-list-item__content__input-area__edit-button--edit-mode, .todo-list-item__content__input-area__delete-button--edit-mode {
-          border-radius: 50%;
-          background-color: #ccc;
-          color: #fff;
-          padding: 6px;
-          margin-right: 8px; }
+    padding: 0.5rem 0 10px; }
+  .todo-list-item__input-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .todo-list-item__button-box {
+    flex-shrink: 0; }
+    .todo-list-item__button-box button:last-of-type {
+      margin: 0; }
+  .todo-list-item__edit-button, .todo-list-item__delete-button {
+    margin: 0 0.312rem 0 0;
+    padding: 0.375rem 0.75rem;
+    background-color: #fff;
+    border: 1px solid #e1dfdd;
+    color: #292827;
+    border-radius: 0.25rem;
+    font-size: 0.937rem;
+    cursor: pointer;
+    transition: all 0.2s; }
+    .todo-list-item__edit-button--edit-mode, .todo-list-item__edit-button:hover, .todo-list-item__delete-button--edit-mode, .todo-list-item__delete-button:hover {
+      border: 1px solid #2564cf;
+      color: #2564cf; }
   .todo-list-item__delete-modal {
     display: flex;
     position: fixed;
@@ -401,45 +404,121 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999; }
     .todo-list-item__delete-modal-content {
-      margin: auto;
-      background-color: #fff;
-      padding: 16px;
-      border-radius: 0.25rem;
       display: flex;
       flex-direction: column;
-      align-items: center; }
-      .todo-list-item__delete-modal-content-message {
-        font-size: 1.2rem;
-        margin: 16px 0; }
-      .todo-list-item__delete-modal-content-buttons {
-        display: flex;
-        justify-content: space-between;
-        width: 100%; }
+      align-items: center;
+      justify-content: center;
+      padding: 3.125rem 1rem;
+      max-width: 20rem;
+      width: 100%;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 0.25rem; }
+    .todo-list-item__delete-modal-message {
+      font-size: 1.2rem;
+      margin: 0 0 1rem; }
+    .todo-list-item__delete-modal-buttons {
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+    .todo-list-item__delete-modal-button {
+      margin: 0 0.312rem 0 0;
+      padding: 0.375rem 0.75rem;
+      background-color: #fff;
+      border: 1px solid #e1dfdd;
+      color: #292827;
+      border-radius: 0.25rem;
+      font-size: 0.937rem;
+      cursor: pointer;
+      transition: all 0.2s; }
+      .todo-list-item__delete-modal-button:hover {
+        border: 1px solid #2564cf;
+        color: #2564cf; }
   .todo-list-item__info {
     display: flex;
     align-items: center;
-    margin-top: 8px;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
     font-size: 0.8rem;
     color: #767676; }
-    .todo-list-item__info span {
+    .todo-list-item__info > span {
       display: inline-block;
       position: relative;
-      padding: 0 0 0 15px; }
-      .todo-list-item__info span::before {
+      padding: 0.25rem 0.75rem 0.25rem 1.25rem;
+      margin: 0 0.75rem 0 0;
+      line-height: 1rem; }
+      .todo-list-item__info > span::before {
         content: '';
         display: block;
         position: absolute;
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-        width: 14px;
-        height: 14px; }
-  .todo-list-item__references::before {
-    background: url("../img/icon-at.png") no-repeat left center/0.875rem; }
-  .todo-list-item__created-at::before {
-    background: url("../img/icon-calendar.png") no-repeat left center/0.875rem; }
-  .todo-list-item__updated-at::before {
-    background: url("../img/icon-refresh.png") no-repeat left center/0.875rem; }
+        width: 0.937rem;
+        height: 0.937rem;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 100%; }
+      .todo-list-item__info > span::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: #767676; }
+      .todo-list-item__info > span:last-of-type {
+        margin-right: 0;
+        padding-right: 0; }
+        .todo-list-item__info > span:last-of-type::after {
+          display: none; }
+  .todo-list-item__label--references {
+    position: relative;
+    padding: 0.25rem 0.75rem 0.25rem 0;
+    margin: 0 0.75rem 0 0; }
+    .todo-list-item__label--references::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #767676; }
+    .todo-list-item__label--references > span {
+      display: inline-block;
+      padding: 0 0 0 1.25rem;
+      position: relative;
+      max-width: 100px;
+      line-height: 1rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      word-wrap: break-word;
+      vertical-align: middle;
+      box-sizing: border-box; }
+      .todo-list-item__label--references > span::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 0.937rem;
+        height: 0.937rem;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 100%;
+        background-image: url("../img/icon-at.png"); }
+  .todo-list-item__label--created::before {
+    background-image: url("../img/icon-calendar.png"); }
+  .todo-list-item__label--updated::before {
+    background-image: url("../img/icon-refresh.png"); }
 
 .reference-list {
   display: flex;
@@ -453,7 +532,7 @@ body {
     background-color: #2564cf;
     border: none;
     color: #fff;
-    padding: 6px 12px;
+    padding: 0.375rem 0.75rem;
     border-radius: 0.25rem;
     font-size: 0.937rem;
     cursor: pointer;
@@ -466,9 +545,9 @@ body {
   .reference-item__add-button {
     display: inline-block;
     position: relative;
-    padding: 5px 5px 5px 1.562rem;
-    max-width: 120px;
-    height: 26px;
+    padding: 0.312rem 0.312rem 0.312rem 1.562rem;
+    max-width: 11.25rem;
+    height: 1.625rem;
     font-size: 0.812rem;
     line-height: 1;
     border: none;
@@ -484,10 +563,10 @@ body {
       content: '';
       display: block;
       position: absolute;
-      top: 4px;
-      left: 5px;
-      width: 16px;
-      height: 16px;
+      top: 0.25rem;
+      left: 0.312rem;
+      width: 1rem;
+      height: 1rem;
       background: url(../img/icon-at.png) no-repeat center center/100%; }
     .reference-item__add-button.active {
       background: #fff;
@@ -512,26 +591,32 @@ body {
     width: 12.5rem;
     z-index: 999;
     opacity: 0; }
+    .reference-item__modal__title {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid #e1dfdd;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 500;
+      color: #292827; }
     .reference-item__modal__content {
-      position: relative; }
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0 2px 0.5rem rgba(0, 0, 0, 0.15);
+      overflow: auto; }
+      .reference-item__modal__content::-webkit-scrollbar {
+        width: 0.25rem;
+        height: 0.375rem;
+        background-color: #f4f4f4; }
+      .reference-item__modal__content::-webkit-scrollbar-thumb {
+        background-color: #ddd;
+        border-radius: 0.1875rem; }
     .reference-item__modal.open {
       opacity: 1; }
   .reference-item__list {
-    position: relative;
-    width: 100%;
-    max-height: 500px;
-    background-color: #fff;
-    border-radius: 0.25rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    overflow: auto;
-    /* 스크롤바 설정 */ }
-    .reference-item__list::-webkit-scrollbar {
-      width: 0.25rem;
-      height: 0.375rem;
-      background-color: #f4f4f4; }
-    .reference-item__list::-webkit-scrollbar-thumb {
-      background-color: #ddd;
-      border-radius: 0.1875rem; }
+    position: relative; }
   .reference-item__list-item-button {
     background-color: #fff;
     border-bottom: 1px solid #767676;
@@ -550,11 +635,6 @@ body {
     .reference-item__list-item-button--selected {
       background-color: #f0f0f0; }
 
-.reference-btn {
-  cursor: pointer; }
-  .reference-btn:hover {
-    background-color: #f0f0f0; }
-  .reference-btn.active {
-    background-color: #f0f0f0; }
-    .reference-btn.active::before {
-      border-color: #f0f0f0 transparent transparent transparent; }
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px; } }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Todo } from '../api';
 import TodoListItem from './TodoListItem';
-import { useFilter } from '../hooks/useFilter';
+import { FilterType, useFilter } from '../hooks/useFilter';
 import { usePagination } from '../hooks/usePagination';
 
 interface TodoListProps {
@@ -18,14 +18,17 @@ interface TodoListProps {
     onUpdateTodos: () => void;
 }
 
-const PAGE_SIZE = 5; // 한 페이지당 보여줄 아이템 수
+const PAGE_SIZE = 10; // 한 페이지당 보여줄 아이템 수
 
 const TodoList = (props: TodoListProps) => {
     const { filteredData, filter, handleFilter } = useFilter(props.todos);
-    const { currentPage, paginatedData, totalPages, handlePrevPage, handleNextPage } = usePagination(
-        PAGE_SIZE,
-        filteredData
-    );
+    const { currentPage, paginatedData, totalPages, handleinitializePage, handlePrevPage, handleNextPage } =
+        usePagination(PAGE_SIZE, filteredData);
+
+    const handleTodoListFilter = (newFilter: FilterType) => {
+        handleFilter(newFilter);
+        handleinitializePage();
+    };
 
     return (
         <>
@@ -37,21 +40,21 @@ const TodoList = (props: TodoListProps) => {
                             className={`todo-list__filter-button ${
                                 filter === 'All' ? 'todo-list__filter-button--active' : ''
                             }`}
-                            onClick={() => handleFilter('All')}>
+                            onClick={() => handleTodoListFilter('All')}>
                             All
                         </button>
                         <button
                             className={`todo-list__filter-button ${
                                 filter === 'Active' ? 'todo-list__filter-button--active' : ''
                             }`}
-                            onClick={() => handleFilter('Active')}>
+                            onClick={() => handleTodoListFilter('Active')}>
                             Active
                         </button>
                         <button
                             className={`todo-list__filter-button ${
                                 filter === 'Completed' ? 'todo-list__filter-button--active' : ''
                             }`}
-                            onClick={() => handleFilter('Completed')}>
+                            onClick={() => handleTodoListFilter('Completed')}>
                             Completed
                         </button>
                     </div>
