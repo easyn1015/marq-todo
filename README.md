@@ -1,4 +1,4 @@
-# Marq-TODOS
+# TODOS
 
 이 프로젝트는 TypeScript, SCSS, React로 구성되었으며, node-sass로 scss를 컴파일하여 사용합니다.
 프로젝트의 구성은 크게 에셋, 컴포넌트, 훅, 모크, 유틸로 되어 있습니다.
